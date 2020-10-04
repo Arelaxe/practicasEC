@@ -1,0 +1,22 @@
+1sblayout asm
+layout regs
+br main
+run
+ni
+
+
+
+
+si
+x/1sb $rsp+0x30 // No sé si es 1 ó l
+x/1sp 0x601068 // No sé si es p o b
+
+set $eax=0
+
+x/ldw 0x601060
+
+set write on
+file bomba
+x/i 0x4007ce
+
+objdump -d bomba // Fuera de gdb
